@@ -1,18 +1,3 @@
-DX2Googler 0.2
-2019-07-25
-
-What's changed:
-- updated prompt for googler
-- new script (SearchGoogle) added.
-	- One line google search bar which gets users search string and
-	  then plugs it into googler
-TO DO:
-- Edit the Makefile
-	- For the time being, keep googler the way it is.
-	- Add cp SearchGoogle script into DX2BIN
-	- Create a rc for hotkey
--------------------------------------------------------------------------------
-
 googler 3.9
 2019-05-30
 
