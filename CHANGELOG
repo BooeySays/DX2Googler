@@ -11,6 +11,9 @@ TO DO:
 	- For the time being, keep googler the way it is.
 	- Add cp SearchGoogle script into DX2BIN
 	- Create a rc for hotkey
+	- Merge SearchGoogle script into the googler script so that they are one
+	  and we dont have to call one script that will call another script.
+	
 -------------------------------------------------------------------------------
 
 googler 3.9
