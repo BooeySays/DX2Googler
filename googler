@@ -2,6 +2,7 @@
 #
 # Copyright © 2008 Henri Hakkinen
 # Copyright © 2015-2019 Arun Prakash Jana <engineerarun@gmail.com>
+# Copyright © 2019 - BooeySays <BooeySays@Gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,6 +16,18 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# VERS:	v0.1
+# FILE:	DX2Googler
+# LANG:	Python
+# EXEC:	DX2Googler
+# DESC:	Displays google results in terminal
+# XTRA:	- Script uses w3m to open results, so w3m needs to be installed
+#		  and the BROWSER var set to 'w3m'
+# GHUB:	github.com/BooeySays/DX2Googler
+# FORK:	github.com/jarun/googler
+
+
 
 import argparse
 import atexit
@@ -1517,6 +1530,7 @@ class GoogleUrl(object):
 
     """
 
+# BOOEYSAYS: Something to look into
     def __init__(self, opts=None, **kwargs):
         self.scheme = 'https'
         # self.netloc is a calculated property
@@ -2272,7 +2286,18 @@ class Result(object):
 
         if colors:
             # Adjust index to print result index clearly
-            print(" %s%s%-*s%s" % (' ' * pre, colors.index, indent, index + '.', colors.reset), end='')
+            openbr = '['
+            closedbr = ']'
+### BEG NOTE
+# Modified the way the index numbers are displayed. The
+# index numbers are now surrounded by brackets with the
+# brackets being the characters affected by the coloring,
+# and the colors for the numbers are set to the term's 
+# default FG color:
+            print(" %s%s%-*s%s%s" % (' ' * pre, colors.index, indent, '[\033[m' + index, colors.index + ']', colors.reset), end='')
+# ORIGINAL
+#            print(" %s%s%-*s%s" % (' ' * pre, colors.index, indent, index + '.', colors.reset), end='')
+### END NOTE
             if not self.urlexpand:
                 print(' ' + colors.title + title + colors.reset + ' ' + colors.url + url + colors.reset)
             else:
@@ -2591,10 +2616,28 @@ class GooglerCmd(object):
         The new command line (non-empty) is stored in ``self.cmd``.
 
         """
+# BOOEY EDIT        
+#        colors = self.colors
+#        message = 'GOOGLER (? for help)'
+#        prompt = (colors.prompt + message + colors.reset + ' ') if (colors and self.promptcolor) else (message + ': ')
+#        enter_count = 0
+# BOOEY EDIT 
+
+# BEG ADDED
+        import shutil
+        cols, rows = shutil.get_terminal_size()
         colors = self.colors
-        message = 'googler (? for help)'
-        prompt = (colors.prompt + message + colors.reset + ' ') if (colors and self.promptcolor) else (message + ': ')
+        lineb = '_' * cols
+        helpandquit = ' [Ｑ]uit | [Ｈ]elp Screen   '
+        helpandquitc = '\033[48;5;238m \033[1;31m[\033[01;37mＱ\033[1;31m]\033[01;37muit | \033[1;31m[\033[01;37mＨ\033[1;31m]\033[01;37melp Screen \r'
+#		helpline = ('\n' + ' ' * blanks + helpandquit + '\r')
+        messageb = '\033[m\n\n\n\033[1A\rEnter result \033[1;31m[\033[01;37m１－５\033[1;31m]\033[01;37m to open in browser or\ntype in a new string to start a new search:'
+        message = '\033[48;5;238m \033[1;31m[\033[01;37mＮ\033[01;31m]\033[01;37mext screen / \033[31m[\033[37mＰ\033[31m]\033[37mrevious screen '
+#        message = 'googler (? for help)'
+        prompt = ('\n\033[48;5;238m' + '\033[48;5;238m ' * (cols - len(helpandquit)) + helpandquitc + message + messageb + colors.reset + ' ') if (colors and self.promptcolor) else (message + ': ')
+#        prompt = (colors.prompt + lineb + message + colors.reset + ' ') if (colors and self.promptcolor) else (message + ': ')
         enter_count = 0
+# END ADDED 
         while True:
             try:
                 cmd = input(prompt)
@@ -2775,9 +2818,18 @@ class GooglerCmd(object):
                 cmd = self.cmd
                 if cmd == 'f':
                     self.do_first('')
+# Added Uppercase F
+                if cmd == 'F':
+                    self.do_first('')
                 elif cmd.startswith('g '):
                     self.do_google(cmd[2:])
+# Added Uppercase G
+                elif cmd.startswith('G '):
+                    self.do_google(cmd[2:])
                 elif cmd == 'n':
+                    self.do_next('')
+# Added Uppercase N
+                elif cmd == 'N':
                     self.do_next('')
                 elif cmd == 'o':
                     self.do_open()
@@ -2789,7 +2841,13 @@ class GooglerCmd(object):
                     open_url.override_text_browser = False
                 elif cmd == 'p':
                     self.do_previous('')
+# Added Uppercase P
+                elif cmd == 'P':
+                    self.do_previous('')
                 elif cmd == 'q':
+                    break
+# Added Uppercase Q
+                elif cmd == 'Q':
                     break
                 elif cmd == 'x':
                     self.do_exact('')
