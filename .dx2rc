@@ -1,0 +1,43 @@
+figlet -f mono9 'dfx2rc'
+## Load VARs
+#
+export DX2="$HOME/.DX2"
+export DX2BIN="$DX2/bin"
+export DX2FILES="$DX2/files"
+export DX2RC="$DX2/rc"
+export DX2BAK="$DX2/backups"
+export DX2TMP="$DX2/temp"
+export DX2GIT="$DX2/git"
+export DX2FUNCS="$DX2/functions"
+export DX2ALIASES="$DX2/aliases"
+
+## Update PATH
+#
+if [ $(echo $PATH | grep -qe '.DX2/bin'; echo $?) != 0 ]; then
+	export PATH="$DX2BIN:$PATH"
+fi
+
+## Load everything in $DX2RC
+#
+for RCFILES in $DX2RC/*; do
+	if [ -r "$RCFILES" ]; then
+		source "$RCFILES";
+	fi
+done
+
+## Load everything in $DX2FUNCS
+#
+for FUNCSFILES in $DX2FUNCS/*; do
+	if [ -r "$FUNCSFILES" ]; then
+		source "$FUNCSFILES";
+	fi
+done
+
+## Load everything in $DX2ALIASES
+#
+for ALIASESFILES in $DX2ALIASES/*; do
+	if [ -r "$ALIASESFILES" ]; then
+		source "$ALIASESFILES";
+	fi
+done
+
