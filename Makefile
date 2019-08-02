@@ -12,11 +12,11 @@ DX2BK = $(DESTDIR)$(DX2DIR)/backups
 DX2GIT = $(DESTDIR)$(DX2DIR)/github
 DX2FILES = $(DESTDIR)$(DX2DIR)/files
 
-.PHONY: all prep unprep install uninstall disable-self-upgrade
+.PHONY: all prepbash prepzsh unprep install uninstall disable-self-upgrade
 
 all:
 
-prep:
+prepbash:
 	install -m755 -d $(DX2DIR)
 	install -m755 -d $(DX2BIN)
 	install -m755 -d $(DX2RC)
@@ -28,6 +28,19 @@ prep:
 	install -m755 .dx2rc $(HOMEDIR)
 	echo "\n### BEG - SOURCE DX2RC ###\nif [ -f ~/.dx2rc ]; then\n\tsource ~/.dx2rc;\nfi\n### END - SOURCE DX2RC ###\n" >> ~/.bashrc
 	bash
+
+prepbash:
+	install -m755 -d $(DX2DIR)
+	install -m755 -d $(DX2BIN)
+	install -m755 -d $(DX2RC)
+	install -m755 -d $(DX2FN)
+	install -m755 -d $(DX2TMP)
+	install -m755 -d $(DX2BK)
+	install -m755 -d $(DX2GIT)
+	install -m755 -d $(DX2FILES)
+	install -m755 .dx2rc $(HOMEDIR)
+	echo "\n### BEG - SOURCE DX2RC ###\nif [ -f ~/.dx2rc ]; then\n\tsource ~/.dx2rc;\nfi\n### END - SOURCE DX2RC ###\n" >> ~/.zshrc
+	zsh
 
 unprep:
 	rm -rf $(DX2DIR)
