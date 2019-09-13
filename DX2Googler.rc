@@ -8,9 +8,9 @@ else
 fi
 
 
-alias 'Google.com'='GooglePrompt'
+#alias 'Google.com'='GooglePrompt'
 if [ $BASH ]; then
-    bind '"\C-k":"Google.com\n"'
+    bind '"\C-k":"clear; GooglePrompt\n"'
 elif [ $ZSH ]; then
-    bindkey -s '\C-k' 'Google.com\n'
+    bindkey -s '\C-k' 'clear; GooglePrompt\n'
 fi
