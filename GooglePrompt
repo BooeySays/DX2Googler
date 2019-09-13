@@ -5,7 +5,7 @@ import os
 
 COLUMNS, LINES = shutil.get_terminal_size()
 
-__version__='0.3'
+__version__='0.4'
 
 
 LID = COLUMNS - 2
