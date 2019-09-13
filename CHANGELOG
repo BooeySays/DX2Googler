@@ -1,3 +1,14 @@
+-------------------------------------------------------------------------------
+DX2Googler 0.4 - 2019-09-13
+
+  -	Updated CHANGELOG
+  -	Updated version number in GooglePrompt
+  -	Removed "Google.com" alias that points to GooglePrompt
+	  -	added clear command to beginning of hotkeys
+		  -	Now you wont see the PS1 when you call on the search box
+  -	
+
+-------------------------------------------------------------------------------
 DX2Googler 0.3.1 - 2019-07-28
 
 What's changed:
@@ -8,7 +19,7 @@ What's changed:
     - renamed dx2googler-bindkeys.sh to DX2Googler.rc
         - edited Makefile to make rename
     
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 DX2Googler v0.3 - 2019-07-28
 
 What's changed:
