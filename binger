@@ -101,7 +101,7 @@ COLORMAP = {k: '\x1b[%sm' % v for k, v in {
     'x': '0', 'X': '1', 'y': '7', 'Y': '7;1',
 }.items()}
 
-USER_AGENT = 'googler/%s (like MSIE)' % _VERSION_
+USER_AGENT = 'binger/%s (like MSIE)' % _VERSION_
 
 text_browsers = ['elinks', 'links', 'lynx', 'w3m', 'www-browser']
 
@@ -1750,72 +1750,72 @@ class GoogleUrl(object):
     # Data source: https://web.archive.org/web/20170615200243/https://en.wikipedia.org/wiki/List_of_Google_domains
     # Scraper script: https://gist.github.com/zmwangx/b976e83c14552fe18b71
     TLD_TO_DOMAIN_MAP = {
-        'ac': 'google.ac',      'ad': 'google.ad',      'ae': 'google.ae',
-        'af': 'google.com.af',  'ag': 'google.com.ag',  'ai': 'google.com.ai',
-        'al': 'google.al',      'am': 'google.am',      'ao': 'google.co.ao',
-        'ar': 'google.com.ar',  'as': 'google.as',      'at': 'google.at',
-        'au': 'google.com.au',  'az': 'google.az',      'ba': 'google.ba',
-        'bd': 'google.com.bd',  'be': 'google.be',      'bf': 'google.bf',
-        'bg': 'google.bg',      'bh': 'google.com.bh',  'bi': 'google.bi',
-        'bj': 'google.bj',      'bn': 'google.com.bn',  'bo': 'google.com.bo',
-        'br': 'google.com.br',  'bs': 'google.bs',      'bt': 'google.bt',
-        'bw': 'google.co.bw',   'by': 'google.by',      'bz': 'google.com.bz',
-        'ca': 'google.ca',      'cat': 'google.cat',    'cc': 'google.cc',
-        'cd': 'google.cd',      'cf': 'google.cf',      'cg': 'google.cg',
-        'ch': 'google.ch',      'ci': 'google.ci',      'ck': 'google.co.ck',
-        'cl': 'google.cl',      'cm': 'google.cm',      'cn': 'google.cn',
-        'co': 'google.com.co',  'cr': 'google.co.cr',   'cu': 'google.com.cu',
-        'cv': 'google.cv',      'cy': 'google.com.cy',  'cz': 'google.cz',
-        'de': 'google.de',      'dj': 'google.dj',      'dk': 'google.dk',
-        'dm': 'google.dm',      'do': 'google.com.do',  'dz': 'google.dz',
-        'ec': 'google.com.ec',  'ee': 'google.ee',      'eg': 'google.com.eg',
-        'es': 'google.es',      'et': 'google.com.et',  'fi': 'google.fi',
-        'fj': 'google.com.fj',  'fm': 'google.fm',      'fr': 'google.fr',
-        'ga': 'google.ga',      'ge': 'google.ge',      'gf': 'google.gf',
-        'gg': 'google.gg',      'gh': 'google.com.gh',  'gi': 'google.com.gi',
-        'gl': 'google.gl',      'gm': 'google.gm',      'gp': 'google.gp',
-        'gr': 'google.gr',      'gt': 'google.com.gt',  'gy': 'google.gy',
-        'hk': 'google.com.hk',  'hn': 'google.hn',      'hr': 'google.hr',
-        'ht': 'google.ht',      'hu': 'google.hu',      'id': 'google.co.id',
-        'ie': 'google.ie',      'il': 'google.co.il',   'im': 'google.im',
-        'in': 'google.co.in',   'io': 'google.io',      'iq': 'google.iq',
-        'is': 'google.is',      'it': 'google.it',      'je': 'google.je',
-        'jm': 'google.com.jm',  'jo': 'google.jo',      'jp': 'google.co.jp',
-        'ke': 'google.co.ke',   'kg': 'google.kg',      'kh': 'google.com.kh',
-        'ki': 'google.ki',      'kr': 'google.co.kr',   'kw': 'google.com.kw',
-        'kz': 'google.kz',      'la': 'google.la',      'lb': 'google.com.lb',
-        'lc': 'google.com.lc',  'li': 'google.li',      'lk': 'google.lk',
-        'ls': 'google.co.ls',   'lt': 'google.lt',      'lu': 'google.lu',
-        'lv': 'google.lv',      'ly': 'google.com.ly',  'ma': 'google.co.ma',
-        'md': 'google.md',      'me': 'google.me',      'mg': 'google.mg',
-        'mk': 'google.mk',      'ml': 'google.ml',      'mm': 'google.com.mm',
-        'mn': 'google.mn',      'ms': 'google.ms',      'mt': 'google.com.mt',
-        'mu': 'google.mu',      'mv': 'google.mv',      'mw': 'google.mw',
-        'mx': 'google.com.mx',  'my': 'google.com.my',  'mz': 'google.co.mz',
-        'na': 'google.com.na',  'ne': 'google.ne',      'nf': 'google.com.nf',
-        'ng': 'google.com.ng',  'ni': 'google.com.ni',  'nl': 'google.nl',
-        'no': 'google.no',      'np': 'google.com.np',  'nr': 'google.nr',
-        'nu': 'google.nu',      'nz': 'google.co.nz',   'om': 'google.com.om',
-        'pa': 'google.com.pa',  'pe': 'google.com.pe',  'pg': 'google.com.pg',
-        'ph': 'google.com.ph',  'pk': 'google.com.pk',  'pl': 'google.pl',
-        'pn': 'google.co.pn',   'pr': 'google.com.pr',  'ps': 'google.ps',
-        'pt': 'google.pt',      'py': 'google.com.py',  'qa': 'google.com.qa',
-        'ro': 'google.ro',      'rs': 'google.rs',      'ru': 'google.ru',
-        'rw': 'google.rw',      'sa': 'google.com.sa',  'sb': 'google.com.sb',
-        'sc': 'google.sc',      'se': 'google.se',      'sg': 'google.com.sg',
-        'sh': 'google.sh',      'si': 'google.si',      'sk': 'google.sk',
-        'sl': 'google.com.sl',  'sm': 'google.sm',      'sn': 'google.sn',
-        'so': 'google.so',      'sr': 'google.sr',      'st': 'google.st',
-        'sv': 'google.com.sv',  'td': 'google.td',      'tg': 'google.tg',
-        'th': 'google.co.th',   'tj': 'google.com.tj',  'tk': 'google.tk',
-        'tl': 'google.tl',      'tm': 'google.tm',      'tn': 'google.tn',
-        'to': 'google.to',      'tr': 'google.com.tr',  'tt': 'google.tt',
-        'tw': 'google.com.tw',  'tz': 'google.co.tz',   'ua': 'google.com.ua',
-        'ug': 'google.co.ug',   'uk': 'google.co.uk',   'uy': 'google.com.uy',
-        'uz': 'google.co.uz',   'vc': 'google.com.vc',  've': 'google.co.ve',
-        'vg': 'google.vg',      'vi': 'google.co.vi',   'vn': 'google.com.vn',
-        'vu': 'google.vu',      'ws': 'google.ws',      'za': 'google.co.za',
-        'zm': 'google.co.zm',   'zw': 'google.co.zw',
+        'ac': 'bing.ac',      'ad': 'bing.ad',      'ae': 'bing.ae',
+        'af': 'bing.com.af',  'ag': 'bing.com.ag',  'ai': 'bing.com.ai',
+        'al': 'bing.al',      'am': 'bing.am',      'ao': 'bing.co.ao',
+        'ar': 'bing.com.ar',  'as': 'bing.as',      'at': 'bing.at',
+        'au': 'bing.com.au',  'az': 'bing.az',      'ba': 'bing.ba',
+        'bd': 'bing.com.bd',  'be': 'bing.be',      'bf': 'bing.bf',
+        'bg': 'bing.bg',      'bh': 'bing.com.bh',  'bi': 'bing.bi',
+        'bj': 'bing.bj',      'bn': 'bing.com.bn',  'bo': 'bing.com.bo',
+        'br': 'bing.com.br',  'bs': 'bing.bs',      'bt': 'bing.bt',
+        'bw': 'bing.co.bw',   'by': 'bing.by',      'bz': 'bing.com.bz',
+        'ca': 'bing.com',      'cat': 'bing.cat',    'cc': 'bing.cc',
+        'cd': 'bing.cd',      'cf': 'bing.cf',      'cg': 'bing.cg',
+        'ch': 'bing.ch',      'ci': 'bing.ci',      'ck': 'bing.co.ck',
+        'cl': 'bing.cl',      'cm': 'bing.cm',      'cn': 'bing.cn',
+        'co': 'bing.com.co',  'cr': 'bing.co.cr',   'cu': 'bing.com.cu',
+        'cv': 'bing.cv',      'cy': 'bing.com.cy',  'cz': 'bing.cz',
+        'de': 'bing.de',      'dj': 'bing.dj',      'dk': 'bing.dk',
+        'dm': 'bing.dm',      'do': 'bing.com.do',  'dz': 'bing.dz',
+        'ec': 'bing.com.ec',  'ee': 'bing.ee',      'eg': 'bing.com.eg',
+        'es': 'bing.es',      'et': 'bing.com.et',  'fi': 'bing.fi',
+        'fj': 'bing.com.fj',  'fm': 'bing.fm',      'fr': 'bing.fr',
+        'ga': 'bing.ga',      'ge': 'bing.ge',      'gf': 'bing.gf',
+        'gg': 'bing.gg',      'gh': 'bing.com.gh',  'gi': 'bing.com.gi',
+        'gl': 'bing.gl',      'gm': 'bing.gm',      'gp': 'bing.gp',
+        'gr': 'bing.gr',      'gt': 'bing.com.gt',  'gy': 'bing.gy',
+        'hk': 'bing.com.hk',  'hn': 'bing.hn',      'hr': 'bing.hr',
+        'ht': 'bing.ht',      'hu': 'bing.hu',      'id': 'bing.co.id',
+        'ie': 'bing.ie',      'il': 'bing.co.il',   'im': 'bing.im',
+        'in': 'bing.co.in',   'io': 'bing.io',      'iq': 'bing.iq',
+        'is': 'bing.is',      'it': 'bing.it',      'je': 'bing.je',
+        'jm': 'bing.com.jm',  'jo': 'bing.jo',      'jp': 'bing.co.jp',
+        'ke': 'bing.co.ke',   'kg': 'bing.kg',      'kh': 'bing.com.kh',
+        'ki': 'bing.ki',      'kr': 'bing.co.kr',   'kw': 'bing.com.kw',
+        'kz': 'bing.kz',      'la': 'bing.la',      'lb': 'bing.com.lb',
+        'lc': 'bing.com.lc',  'li': 'bing.li',      'lk': 'bing.lk',
+        'ls': 'bing.co.ls',   'lt': 'bing.lt',      'lu': 'bing.lu',
+        'lv': 'bing.lv',      'ly': 'bing.com.ly',  'ma': 'bing.co.ma',
+        'md': 'bing.md',      'me': 'bing.me',      'mg': 'bing.mg',
+        'mk': 'bing.mk',      'ml': 'bing.ml',      'mm': 'bing.com.mm',
+        'mn': 'bing.mn',      'ms': 'bing.ms',      'mt': 'bing.com.mt',
+        'mu': 'bing.mu',      'mv': 'bing.mv',      'mw': 'bing.mw',
+        'mx': 'bing.com.mx',  'my': 'bing.com.my',  'mz': 'bing.co.mz',
+        'na': 'bing.com.na',  'ne': 'bing.ne',      'nf': 'bing.com.nf',
+        'ng': 'bing.com.ng',  'ni': 'bing.com.ni',  'nl': 'bing.nl',
+        'no': 'bing.no',      'np': 'bing.com.np',  'nr': 'bing.nr',
+        'nu': 'bing.nu',      'nz': 'bing.co.nz',   'om': 'bing.com.om',
+        'pa': 'bing.com.pa',  'pe': 'bing.com.pe',  'pg': 'bing.com.pg',
+        'ph': 'bing.com.ph',  'pk': 'bing.com.pk',  'pl': 'bing.pl',
+        'pn': 'bing.co.pn',   'pr': 'bing.com.pr',  'ps': 'bing.ps',
+        'pt': 'bing.pt',      'py': 'bing.com.py',  'qa': 'bing.com.qa',
+        'ro': 'bing.ro',      'rs': 'bing.rs',      'ru': 'bing.ru',
+        'rw': 'bing.rw',      'sa': 'bing.com.sa',  'sb': 'bing.com.sb',
+        'sc': 'bing.sc',      'se': 'bing.se',      'sg': 'bing.com.sg',
+        'sh': 'bing.sh',      'si': 'bing.si',      'sk': 'bing.sk',
+        'sl': 'bing.com.sl',  'sm': 'bing.sm',      'sn': 'bing.sn',
+        'so': 'bing.so',      'sr': 'bing.sr',      'st': 'bing.st',
+        'sv': 'bing.com.sv',  'td': 'bing.td',      'tg': 'bing.tg',
+        'th': 'bing.co.th',   'tj': 'bing.com.tj',  'tk': 'bing.tk',
+        'tl': 'bing.tl',      'tm': 'bing.tm',      'tn': 'bing.tn',
+        'to': 'bing.to',      'tr': 'bing.com.tr',  'tt': 'bing.tt',
+        'tw': 'bing.com.tw',  'tz': 'bing.co.tz',   'ua': 'bing.com.ua',
+        'ug': 'bing.co.ug',   'uk': 'bing.co.uk',   'uy': 'bing.com.uy',
+        'uz': 'bing.co.uz',   'vc': 'bing.com.vc',  've': 'bing.co.ve',
+        'vg': 'bing.vg',      'vi': 'bing.co.vi',   'vn': 'bing.com.vn',
+        'vu': 'bing.vu',      'ws': 'bing.ws',      'za': 'bing.co.za',
+        'zm': 'bing.co.zm',   'zw': 'bing.co.zw',
     }
 
     @property
@@ -1824,7 +1824,7 @@ class GoogleUrl(object):
         try:
             return 'www.' + self.TLD_TO_DOMAIN_MAP[self._tld]
         except KeyError:
-            return 'www.google.com'
+            return 'www.bing.com'
 
     @property
     def query(self):
@@ -2628,13 +2628,12 @@ class GooglerCmd(object):
         cols, rows = shutil.get_terminal_size()
         colors = self.colors
         lineb = '_' * cols
-        resultnum = int((rows - 9) / 4)
         helpandquit = ' [Ｑ]uit | [Ｈ]elp Screen   '
         helpandquitc = '\033[48;5;238m \033[1;31m[\033[01;37mＱ\033[1;31m]\033[01;37muit | \033[1;31m[\033[01;37mＨ\033[1;31m]\033[01;37melp Screen \r'
 #		helpline = ('\n' + ' ' * blanks + helpandquit + '\r')
-        messageb = '\033[m\n\n\n\033[1A\033[00;01m\rEnter result \033[1;31m[\033[01;37m１－' + str(resultnum) + '\033[1;31m]\033[01;37m to open in browser or\ntype in a new string to start a new search:'
-        message = '\033[48;5;238m \033[31m[\033[37mＰ\033[31m]\033[37mrevious / \033[1;31m[\033[01;37mＮ\033[01;31m]\033[01;37mext ' + str(resultnum) + ' results.'
-#       message = '\033[48;5;238m \033[1;31m[\033[01;37mＮ\033[01;31m]\033[01;37mext screen / \033[31m[\033[37mＰ\033[31m]\033[37mrevious screen '#        message = 'googler (? for help)'
+        messageb = '\033[m\n\n\n\033[1A\rEnter result \033[1;31m[\033[01;37m１－５\033[1;31m]\033[01;37m to open in browser or\ntype in a new string to start a new search:'
+        message = '\033[48;5;238m \033[1;31m[\033[01;37mＮ\033[01;31m]\033[01;37mext screen / \033[31m[\033[37mＰ\033[31m]\033[37mrevious screen '
+#        message = 'googler (? for help)'
         prompt = ('\n\033[48;5;238m' + '\033[48;5;238m ' * (cols - len(helpandquit)) + helpandquitc + message + messageb + colors.reset + ' ') if (colors and self.promptcolor) else (message + ': ')
 #        prompt = (colors.prompt + lineb + message + colors.reset + ' ') if (colors and self.promptcolor) else (message + ': ')
         enter_count = 0

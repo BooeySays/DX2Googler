@@ -14,9 +14,9 @@ DX2FILES = $(DESTDIR)$(DX2DIR)/files
 DX2AKA = $(DESTDIR)$(DX2DIR)/aliases
 DX2TEST = $(DESTDIR)$(DX2DIR)/test
 
-.PHONY: all ttest prepbash prepzsh unprep install uninstall disable-self-upgrade
+.PHONY: ttest prepbash prepzsh unprep install uninstall disable-self-upgrade
 
-all:
+
 
 ttest:
 	test -d $(DX2DIR) || echo "System has not been prepped. prepping now:" && install -m755 -d $(DX2DIR) && echo "MAKING 1" && install -m755 -d $(DX2BIN) && echo "Making 2"
