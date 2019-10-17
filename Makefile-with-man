@@ -6,10 +6,30 @@ MANDIR = $(DESTDIR)$(PREFIX)/share/man/man1
 DOCDIR = $(DESTDIR)$(PREFIX)/share/doc/googler
 DX2BIN = $(DESTDIR)$(DX2DIR)/bin
 DX2RC = $(DESTDIR)$(DX2DIR)/rc
+DX2FN = $(DESTDIR)$(DX2DIR)/functions
+DX2TMP = $(DESTDIR)$(DX2DIR)/temp
+DX2BK = $(DESTDIR)$(DX2DIR)/backups
+DX2GIT = $(DESTDIR)$(DX2DIR)/github
+DX2FILES = $(DESTDIR)$(DX2DIR)/files
+DX2AKA = $(DESTDIR)$(DX2DIR)/aliases
+DX2TEST = $(DESTDIR)$(DX2DIR)/test
 
-.PHONY: install uninstall disable-self-upgrade
+.PHONY: ttest prepbash prepzsh unprep install dxinstall dxuninstall uninstall disable-self-upgrade
 
 install:
+	install -m755 -d $(BINDIR)
+	install -m755 -d $(MANDIR)
+	install -m755 -d $(DOCDIR)
+	gzip -c googler.1 > googler.1.gz
+	install -m755 googler $(DX2BIN)
+	install -m755 GooglePrompt $(DX2BIN)
+	install -m755 Google.com $(DX2BIN)
+	install -m755 DX2Googler.rc $(DX2RC)
+	install -m644 googler.1.gz $(MANDIR)
+	install -m644 README.md $(DOCDIR)
+	rm -f googler.1.gz
+
+dxinstall:
 	install -m755 -d $(DX2DIR)
 	install -m755 -d $(DX2BIN)
 	install -m755 googler $(DX2BIN)
@@ -18,6 +38,13 @@ install:
 	install -m755 DX2Googler.rc $(DX2RC)
 
 uninstall:
+	rm -f $(BINDIR)/googler
+	rm -f $(DX2BIN)/GooglePrompt
+	rm -f $(DX2RC)/DX2Googler.rc
+	rm -f $(MANDIR)/googler.1.gz
+	rm -rf $(DOCDIR)
+
+dxuninstall:
 	rm -f $(DX2BIN)/googler
 	rm -f $(DX2BIN)/GooglePrompt
 	rm -f $(DX2BIN)/Google.com
