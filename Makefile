@@ -13,7 +13,6 @@ install:
 	install -m755 -d $(DX2DIR)
 	install -m755 -d $(DX2BIN)
 	install -m755 googler $(DX2BIN)
-	install -m755 GooglePrompt $(DX2BIN)
 	install -m755 Google.com $(DX2BIN)
 	install -m755 DX2Googler.rc $(DX2RC)
 
