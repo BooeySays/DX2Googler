@@ -1,4 +1,4 @@
-if [ "$(w3m -version 2&>/dev/null | grep -qe 'w3m'; echo $?)" -eq '0' ]; then
+if [ "$(w3m -version 2&>/dev/null; echo $?)" -eq '0' ]; then
     export BROWSER=w3m
 else
     echo -en """
