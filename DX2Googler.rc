@@ -1,20 +1,37 @@
-if [ "$(w3m -version 2&>/dev/null; echo $?)" -eq '0' ]; then
-    export BROWSER=w3m
+#if [ "$(w3m -version 2&>/dev/null; echo $?)" -eq '0' ]; then
+#    export BROWSER=w3m
+#else
+#    echo -en """
+#w3m not found.
+#
+#[ hit any key to continue to install ]
+#
+#"""
+#    read -n 1
+#    sudo apt update -y && sudo apt install w3m -y
+#    export BROWSER=w3m
+#fi
+
+if hash w3m &>/dev/null; then
+	export BROWSER=w3m
 else
-    echo -en """
+	echo -en """\
 w3m not found.
 
-[ hit any key to continue to install ]
+[ Hit enter to install now or CTRL+C to quit ]
 
 """
-    read -n 1
-    sudo apt update -y && sudo apt install w3m -y
-    export BROWSER=w3m
+	read
+	sudo apt-get update -y && sudo apt-get install w3m -y
+	export BROWSER=w3m
 fi
 
-
 if [ $BASH ]; then
+	export BROWSER=w3m
     bind '"\C-k":"Google.com\n"'
-elif [ $ZSH ]; then
+fi
+
+if [ $ZSH ]; then
+	export BROWSER=w3m
     bindkey -s '\C-k' 'Google.com\n'
 fi
