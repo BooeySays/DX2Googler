@@ -30,4 +30,4 @@ print('\033[m\n')
 # Modified to turn cursor back on
 #print('\033[m\033[?23h\n')
 print('\033[m     Showing results for: "\033[01;38;5;51m' + searchq + '\033[m"')
-os.system('googler --colors BmcgxX -n ' + str(SEARCHRESULTS) + ' ' + searchq)
+os.system('dx2googler --colors BmcgxX -n ' + str(SEARCHRESULTS) + ' ' + searchq)
