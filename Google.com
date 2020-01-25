@@ -4,7 +4,7 @@ import shutil
 import os
 
 COLUMNS, LINES = shutil.get_terminal_size()
-SEARCHRESULTS = int((LINES - 9) / 4)
+SEARCHRESULTS = int((LINES - 4) / 5)
 __version__='0.3'
 BARSTRING = "  Enter your search query + Press [ENTER]"
 
