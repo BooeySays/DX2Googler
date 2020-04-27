@@ -8,7 +8,8 @@ if [ ! -d "$HOME/.DX2" ]; then
 		read -p "[Y/n]: "
 			case $REPLY in
 				""|"y"|"Y")
-					sudo apt-get install git python3 -y
+					sudo apt-get update -y
+					sudo apt-get install w3m make git python3 -y
 					git clone https://github.com/BooeySays/SetupDX2.git
 					cd SetupDX2
 					python3 ./Setup.py
@@ -29,6 +30,7 @@ if [ ! -d "$HOME/.DX2" ]; then
 			esac
 	done
 else
-	sudo apt-get install w3m -y;
+	sudo apt-get update -y
+	sudo apt-get install w3m make -y;
 	make;
 fi
