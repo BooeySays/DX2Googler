@@ -1,3 +1,5 @@
+export BROWSER=w3m
+
 if [ $BASH ]; then
     bind '"\C-k":"Google.com\n"'
 elif [ $ZSH ]; then
