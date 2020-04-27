@@ -13,19 +13,22 @@ if [ ! -d "$HOME/.DX2" ]; then
 					cd SetupDX2
 					python3 ./Setup.py
 					cd ..
+					make
+					return
 					;;
 				"n"|"N")
-					echo -e "Exiting"
+					echo -e "\nExiting"
 					return
 					;;
 				*)
-					echo -e "\nInvalid key - try again"
+					echo -e "\n\n\033[00;01;31mERR\033[37m:\033[m Invalid key"
+					echo -e ""
+					echo -e "[ Press any key to try again ]"
+					read -n 1
 					;;
 			esac
 	done
+else
+	sudo apt-get install w3m -y;
+	make;
 fi
-
-sudo apt-get install w3m -y;
-
-make;
-make install;
