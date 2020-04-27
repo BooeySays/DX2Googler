@@ -14,13 +14,13 @@ install:
 	install -m755 -d $(DX2BIN)
 	install -m755 dx2googler $(DX2BIN)
 	install -m755 Google.com $(DX2BIN)
-	install -m755 DX2Googler.rc $(DX2RC)
+	install -m755 DX2GooglerHotkey.rc $(DX2RC)
 
 uninstall:
 	rm -f $(DX2BIN)/dx2googler
 	rm -f $(DX2BIN)/GooglePrompt
 	rm -f $(DX2BIN)/Google.com
-	rm -f $(DX2RC)/DX2Googler.rc
+	rm -f $(DX2RC)/DX2GooglerHotkey.rc
 
 # Disable the self-upgrade mechanism entirely. Intended for packagers.
 #
