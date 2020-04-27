@@ -2687,7 +2687,7 @@ class DX2GooglerCmd(object):
         The new command line (non-empty) is stored in ``self.cmd``.
 
         """
-        promptdash = ('\033[00;01;38;5;196m⎼\033[m')
+        promptdash = ('\033[00;01;38;5;196m─\033[m')
         colors = self.colors
         helpstr = (' [H]elp ' + promptdash + ' [Q]uit ')
         prevnextstr = (promptdash * 2 + ' [P]rev ' + promptdash + ' [N]ext ')
