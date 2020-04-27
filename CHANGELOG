@@ -2,6 +2,7 @@
   -	Edited install script and added a "[ Press any key to continue ]" to the case
   	statement
   -	edited install.sh to update apt-get and install make
+  -	edited dx2googler and changed the dashes to real dashes
 
 [ v0.3 - 042620 ]
   -	Added DX2GooglerHotkey.rc file that will be used to set the hotkeys at startup
