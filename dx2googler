@@ -2,7 +2,6 @@
 #
 # Copyright © 2008 Henri Hakkinen
 # Copyright © 2015-2019 Arun Prakash Jana <engineerarun@gmail.com>
-# Copyright © 2020 @BooeySays
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -90,7 +89,7 @@ except ValueError:
 
 # Constants
 
-_VERSION_ = '0.3.1'
+_VERSION_ = '0.3.3'
 
 COLORMAP = {k: '\x1b[%sm' % v for k, v in {
     'a': '30', 'b': '31', 'c': '32', 'd': '33',
@@ -2364,7 +2363,7 @@ class Result(object):
 
         if colors:
             # Adjust index to print result index clearly
-            print(" %s%s%-3s%s" % (' ' * indent, colors.index, index + '.', colors.reset), end='')
+            print(" %s%s%-3s%s" % (' ' * indent, colors.index, "\033[00;01;38;5;196m[\033[00;01m" + index + "\033[00;01;38;5;196m]\033[00;01m", colors.reset), end='')
             if not self.urlexpand:
                 print(' ' + colors.title + title + colors.reset + ' ' + colors.url + url + colors.reset)
             else:
@@ -2372,10 +2371,10 @@ class Result(object):
                 print(' ' * (indent + 5) + colors.url + url + colors.reset)
         else:
             if self.urlexpand:
-                print(' %s%-3s %s' % (' ' * indent, index + '.', title))
+                print(' %s%-3s %s' % (' ' * indent, "\033[00;01;38;5;196m[\033[00;01m" + index + "\033[00;01;38;5;196m]\033[00;01m", title))
                 print(' %s%s' % (' ' * (indent + 4), url))
             else:
-                print(' %s%-3s %s %s' % (' ' * indent, index + '.', title, url))
+                print(' %s%-3s %s %s' % (' ' * indent, "\033[00;01;38;5;196m[\033[00;01m" + index + "\033[00;01;38;5;196m]\033[00;01m", title, url))
 
     def _print_metadata_and_abstract(self, abstract, metadata=None, matches=None, indent=0):
         colors = self.colors
@@ -2690,11 +2689,12 @@ class DX2GooglerCmd(object):
         """
         promptdash = ('\033[00;01;38;5;196m─\033[m')
         colors = self.colors
-        helpstr = (' [H]elp ' + promptdash + ' [Q]uit ')
-        prevnextstr = (promptdash * 2 + ' [P]rev ' + promptdash + ' [N]ext ')
-        promptline = (promptdash * COLS + '\033[18D' + helpstr + '\r' + prevnextstr + '\033[m\n')
+        helpstr = (' \033[00;01;38;5;196m[\033[mH\033[00;01;38;5;196m]\033[melp ' + promptdash + ' \033[00;01;38;5;196m[\033[mQ\033[00;01;38;5;196m]\033[muit ')
+        prevnextstr = (" " + promptdash + ' \033[00;01;38;5;196m[\033[mP\033[00;01;38;5;196m]\033[mrev ' + promptdash + ' \033[00;01;38;5;196m[\033[mN\033[00;01;38;5;196m]\033[mext ')
+        promptline = (promptdash * (COLS - 1) + " " + '\033[18D' + helpstr + '\r' + prevnextstr + '\033[m\n')
 #        messagewideterm = 'ＤＸ２Ｇｏｏｇｌｅｒ: '
-        message = '\033[01mDX2\033[01;38;5;32mG\033[38;5;160mo\033[38;5;215mo\033[38;5;32mg\033[38;5;34ml\033[38;5;160me\033[38;5;15mr：\033[m '
+#        message = '\033[01mDX2\033[01;38;5;32mG\033[38;5;160mo\033[38;5;215mo\033[38;5;32mg\033[38;5;34ml\033[38;5;160me\033[38;5;15mr：\033[m '
+        message = ' Search Result \033[00;01;38;5;196m[\033[00;01m#\033[00;01;38;5;196m]\033[00;01m : '
         prompt = (promptline + message + colors.reset + ' ') if (colors and self.promptcolor) else (message + ': ')
 #        prompt = (colors.prompt + message + colors.reset + ' ') if (colors and self.promptcolor) else (message + ': ')
         enter_count = 0
