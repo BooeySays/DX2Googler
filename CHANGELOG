@@ -1,3 +1,10 @@
+[ v0.3.2 - 051520 ]
+  -	Edited prompt line
+	  -	replaced dashes with full line
+	  - replaced brackets with red brackets
+	  - added a buffer space at the beginning and end of prompt line
+  -	Edited prompt from "DX2GOOGLER: " to "Search Result [#]: "
+
 [ v0.3.1 - 042620 ]
   -	Edited install script and added a "[ Press any key to continue ]" to the case
   	statement
