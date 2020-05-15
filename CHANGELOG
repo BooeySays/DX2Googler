@@ -1,3 +1,8 @@
+[ v0.3.3 - 051520 ]
+  -	Edited index numbers that are displayed in the results
+  	  -	Changed the result numbers coloring from red to white
+  	  -	Surrounded the white number with red square brackets
+
 [ v0.3.2 - 051520 ]
   -	Edited prompt line
 	  -	replaced dashes with full line
