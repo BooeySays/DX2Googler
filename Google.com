@@ -3,14 +3,26 @@
 import shutil
 import os
 
+DEFBROWSER = os.getenv("BROWSER")
+
+def getdefaultbrowser():
+	defbrowserprompt = "\033[00;01;38;5;51mDefault Browser\033[00;01m: "
+	if os.getenv("BROWSER") is None:
+		DEFBROW = "\033[00;01;38;5;196mERR\033[00;01m - Default browser is not set"
+	else:
+		DEFBROW = str.upper(os.getenv("BROWSER"))
+	print(defbrowserprompt + DEFBROW)
+
 COLUMNS, LINES = shutil.get_terminal_size()
 SEARCHRESULTS = int((LINES - 4) / 5)
-__version__='0.3.1'
+__version__='0.3.6'
 BARSTRING = "  Enter your search query + Press [ENTER]"
 
 LID = COLUMNS - 2
 BAR = COLUMNS - 18
-print('\n\033[m' + '╭' + '─' * LID + '╮' + '\n\n' + '╰' + '─' * LID + '╯')
+print('\n')
+getdefaultbrowser()
+print('\033[m' + '╭' + '─' * LID + '╮' + '\n\n' + '╰' + '─' * LID + '╯')
 # Original search bar where the color of the bar
 # is just color reset, reversed
 #

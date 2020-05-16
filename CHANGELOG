@@ -1,3 +1,9 @@
+[ v0.3.6 - 051520 ]
+  -	Tweaked the Google.com script with the following:
+		  -	Added a function to look for the value of $BROWSER which is the default browser
+			set for the console.
+		  -	Displays the default browser that is set BEFORE the search input box
+  
 [ v0.3.5 - 051520 ]
   - edited help screen and added coloring
 
