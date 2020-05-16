@@ -1,3 +1,10 @@
+[ v0.3.5 - 051520 ]
+  - edited help screen and added coloring
+
+[ v0.3.4 - 051520 ]
+  -	Changed prompt line color to 38;5;27m
+  - added new var: resultnum
+
 [ v0.3.3 - 051520 ]
   -	Edited index numbers that are displayed in the results
   	  -	Changed the result numbers coloring from red to white
