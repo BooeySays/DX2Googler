@@ -13,8 +13,8 @@
 
 [ v0.3.3 - 051520 ]
   -	Edited index numbers that are displayed in the results
-  	  -	Changed the result numbers coloring from red to white
-  	  -	Surrounded the white number with red square brackets
+	  -	Changed the result numbers coloring from red to white
+	  -	Surrounded the white number with red square brackets
 
 [ v0.3.2 - 051520 ]
   -	Edited prompt line
@@ -25,13 +25,13 @@
 
 [ v0.3.1 - 042620 ]
   -	Edited install script and added a "[ Press any key to continue ]" to the case
-  	statement
+	statement
   -	edited install.sh to update apt-get and install make
   -	edited dx2googler and changed the dashes to real dashes
 
 [ v0.3 - 042620 ]
   -	Added DX2GooglerHotkey.rc file that will be used to set the hotkeys at startup
   -	Added a install.sh script
-  	  -	Checks to see if SetupDX2 is installed or not and will install it first before
-  	  	installing DX2Googler
+	  -	Checks to see if SetupDX2 is installed or not and will install it first before
+		installing DX2Googler
   -	Removed googler script because it wasn't working
