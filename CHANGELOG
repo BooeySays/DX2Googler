@@ -1,3 +1,9 @@
+[ v0.3.6.1 - 070820 ]
+  -	Added borederlessgoogler.py [v1.0] (different version of Google.com, drawn without the box)
+	  -	background	= light grey
+	  -	input box	= white
+	  -	text		- black
+
 [ v0.3.6 - 051520 ]
   -	Tweaked the Google.com script with the following:
 		  -	Added a function to look for the value of $BROWSER which is the default browser

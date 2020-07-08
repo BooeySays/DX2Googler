@@ -2,6 +2,8 @@
 
 import shutil
 
+_VERSION_ = "1.0"
+
 COLS, LINES = shutil.get_terminal_size()
 
 BGB = "\033[07m \033[m"
@@ -11,7 +13,7 @@ BG = "\033[48;5;252m \033[m"
 print("\n")
 print(" " + BG * (COLS - 2))
 print(" " + BG + BGB * (COLS - 4) + BG)
-rqrq = input(" " + BG * (COLS - 2) + "\n\r\033[2A\033[2C" + "\033[48;5;252m " + GOOGLELOGO)
-print("\n\n")
+rqrq = input(" " + BG * (COLS - 2) + "\n\r\033[2A\033[2C" + "\033[48;5;252m " + GOOGLELOGO + "\033[0m\033[7m")
+print("\033[m\n\n")
 #print()
 #Ｇｏｏｇｌｅ

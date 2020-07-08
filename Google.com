@@ -15,7 +15,7 @@ def getdefaultbrowser():
 
 COLUMNS, LINES = shutil.get_terminal_size()
 SEARCHRESULTS = int((LINES - 4) / 5)
-__version__='0.3.6'
+__version__='0.3.6.1'
 BARSTRING = "  Enter your search query + Press [ENTER]"
 
 LID = COLUMNS - 2
