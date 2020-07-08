@@ -1,3 +1,12 @@
+[ v0.3.6.2 - 070820 ]
+  [borderlessgoogler.py v1.1]
+	  -	seperated the input so the script will FULLY draw the google box first, then ask for the
+		input.
+		(this version of the script will make it easier to edit it, changing the coloring /
+		themes, and saving/creating different versions of the script. ALSO, it will make it easier
+		to just draw the script without asking for the input, making it easier to show the user a
+		preview)
+
 [ v0.3.6.1 - 070820 ]
   -	Added borederlessgoogler.py [v1.0] (different version of Google.com, drawn without the box)
 	  -	background	= light grey
