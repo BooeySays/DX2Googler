@@ -6,7 +6,7 @@ import os
 _VERSION_ = "1.4"
 
 COLS, LINES = shutil.get_terminal_size()
-SEARCHRESULTS = int((LINES - 4) / 5.3)
+SEARCHRESULTS = int((LINES - 4) / 5.22222)
 BGB = "\033[48;5;15m \033[m"
 GOOGLELOGO = "\033[01;38;5;32m Ｇ\033[38;5;160mｏ\033[38;5;215mｏ\033[38;5;32mｇ\033[38;5;34mｌ\033[38;5;160mｅ\033[38;5;00m: \033[1C\033[48;5;252m"
 BG = "\033[48;5;252m \033[m"
@@ -25,7 +25,7 @@ os.system('dx2googler --colors BmcgxX -n ' + str(SEARCHRESULTS) + ' ' + searchq)
 ##	CHANGELOG
 #
 #	v1.4
-#	  -	Changed equation - divide by 5.3 instead of 5
+#	  -	Changed equation - divide by 5.22222 instead of 5
 #
 #	v1.3
 #	  -	imported os
