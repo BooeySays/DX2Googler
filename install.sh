@@ -9,12 +9,31 @@ if [ ! -d "$HOME/.DX2" ]; then
 			case $REPLY in
 				""|"y"|"Y")
 					sudo apt-get update -y
-					sudo apt-get install w3m make git python3 -y
-					git clone https://github.com/BooeySays/SetupDX2.git
-					cd SetupDX2
+					sudo apt-get install w3m make python3 wget -y
+					wget https://raw.githubusercontent.com/BooeySays/SetupDx2/master/Setup.py
+					read -p "[ Hit any key to set up DX2 ]" -n 1;
 					python3 ./Setup.py
-					cd ..
-					make
+					echo -e "\nDONE !!\n"
+					if ! command -v w3m &> /dev/null; then
+						echo -e "w3m not found";
+						sudo apt-get update -y;
+						sudo apt-get install w3m -y;
+					fi
+					if ! command -v make &> /dev/null; then
+						echo -e "Make not found"
+						sudo apt-get update -y;
+						sudo apt-get install make -y;
+					fi
+					if ! command -v python3 &> /dev/null; then
+						echo -e "Python3 not found"
+						sudo apt-get update -y;
+						sudo apt-get install python3 -y;
+					fi
+				#	echo -e "\033[m\033[01;31mInstalling w3m and make\033[m:";
+				#	sudo apt-get install w3m make -y;
+					read -p "[m[01;31mFinished - Press any key to continue and install dx2googler" -n 1;
+					make;
+#					make
 					return
 					;;
 				"n"|"N")
@@ -30,7 +49,24 @@ if [ ! -d "$HOME/.DX2" ]; then
 			esac
 	done
 else
-	sudo apt-get update -y
-	sudo apt-get install w3m make -y;
+	if ! command -v w3m &> /dev/null; then
+		echo -e "w3m not found";
+		sudo apt-get update -y;
+		sudo apt-get install w3m -y;
+	fi
+	if ! command -v make &> /dev/null; then
+		echo -e "Make not found"
+		sudo apt-get update -y;
+		sudo apt-get install make -y;
+	fi
+	if ! command -v python3 &> /dev/null; then
+		echo -e "Python3 not found"
+		sudo apt-get update -y;
+		sudo apt-get install python3 -y;
+	fi
+#	echo -e "\033[m\033[01;31mInstalling w3m and make\033[m:";
+#	sudo apt-get install w3m make -y;
+	read -p "[m[01;31mFinished - Press any key to continue and install dx2googler[m" -n 1;
 	make;
 fi
+
