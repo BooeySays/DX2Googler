@@ -26,16 +26,4 @@ To do this, I added the following:
 
 `DX2Googler` isn't affiliated to Google in any way.
 
-More fun stuff you can try with `googler`:
-
-- A Google search screen (with the Google logo, input box, and non functioning buttons) similar to that of Google.com
-- Easy access shortcut keys ([CTRL] + [k]) just like the shortcut you would use with most web browsers out there (except MS Edge)
-- Added more coloring options, and changed the colors used to display the search results so that they are more like the colors used by Google.com
-- Take into account the current terminal's size and automatically calculate the optimum number of results that can be displayed on the current screen and automatically plug that in.
-
-*Love smart and efficient utilities? Explore [my repositories](https://github.com/jarun?tab=repositories). Buy me a cup of coffee if they help you.*
-
-<p align="center">
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RMLTQ76JSXJ4Q"><img src="https://img.shields.io/badge/PayPal-donate-1eb0fc.svg" alt="Donate via PayPal!" /></a>
-</p>
-
+For more information about `googler` (including all of its functions, arguments, etc), check out its README.md at https://github.com/jarun/googler
