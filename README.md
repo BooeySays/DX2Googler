@@ -24,7 +24,7 @@ I originally started working on `DX2Googler` because I wanted using `googler` to
 
 To do this, I added the following:
 
-`googler` isn't affiliated to Google in any way.
+`DX2Googler` isn't affiliated to Google in any way.
 
 More fun stuff you can try with `googler`:
 
