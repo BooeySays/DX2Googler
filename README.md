@@ -1,5 +1,3 @@
-<h1 align="center"><img src="https://cdn.rawgit.com/jarun/googler/master/googler.svg" alt="googler" /></h1>
-
 <p align="center">
 <a href="https://github.com/jarun/googler/releases/latest"><img src="https://img.shields.io/github/release/jarun/googler.svg?maxAge=600" alt="Latest release" /></a>
 <a href="https://aur.archlinux.org/packages/googler"><img src="https://img.shields.io/aur/version/googler.svg?maxAge=600" alt="AUR" /></a>
