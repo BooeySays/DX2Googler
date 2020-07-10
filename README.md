@@ -23,7 +23,12 @@
 I originally started working on `DX2Googler` because I wanted using `googler` to have a feel more similar to using Google from a web browser. That, and I wanted to simplify the process, instead of having to type a huge command line just to do a simple search.
 
 To do this, I added the following:
-
+  - A few different input screens to choose from, including one that looks like the main Google.com webpage (with colored Google logo, input box, and non-functioning buttons)
+  - Edit'd googler's prompts here and there, adding alot more color to make things alot easier to look at
+  - Automatically set the output colors to match Google's default color theme
+  - Automatically set the number of result to display argument by taking into account the terminals current size and figuring out how many results would fit on the screen
+  - Added a HOTKEY option ([CTRL] + [k]), just like the search hotkey used for most GUI web browsers out there (except MS Edge, which used a different key combination)
+  
 `DX2Googler` isn't affiliated to Google in any way.
 
 For more information about `googler` (including all of its functions, arguments, etc), check out its README.md at https://github.com/jarun/googler
