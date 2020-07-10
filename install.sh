@@ -30,7 +30,7 @@ fi
 function installdx2setup(){
 	echo -e "\033[00;01;31mSetting up DX2Setup\033[m:"
 	echo -e -n "\tDownloading setup file\t: "
-	wget https://raw.githubusercontent.com/BooeySays/SetupDx2/master/Setup.py &> /dev/null;
+	wget https://raw.githubusercontent.com/BooeySays/SetupDx2/Release/Setup.py &> /dev/null;
 	echo -e "\033[00;01;32mDONE\033[m"
 	echo -e -n "\tSetting up DX2Setup\t: "
 	python3 ./Setup.py &> /dev/null;
