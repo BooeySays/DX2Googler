@@ -29,6 +29,10 @@ To do this, I added the following:
   - Automatically set the number of result to display argument by taking into account the terminals current size and figuring out how many results would fit on the screen
   - Added a HOTKEY option ([CTRL] + [k]), just like the search hotkey used for most GUI web browsers out there (except MS Edge, which used a different key combination)
   
+<b>INSTALLATION:</b><br>
+  1. After cloning this repo, navigate into the directory and execute the install.sh script<br>
+    1a. <b>DX2Googler</b> requires that the terminal be set up with <b>DX2Setup</b> <i>(A script I made that will set up a system to make it easier to install and uninstall add-ons, keeping it totally separate)</i>, so it will search to see if <b>DX2Setup</b> is installed. If not, it will prompt to install it.
+
 `DX2Googler` isn't affiliated to Google in any way.
 
 For more information about `googler` (including all of its functions, arguments, etc), check out its README.md at https://github.com/jarun/googler
