@@ -294,7 +294,11 @@ PREVIEWEND = ('\n\033[36m' + '─' * COLUMNS + '\r\033[' + str(int((COLUMNS - le
 def ONE():
 	print('\033c')
 	print('  [1/4] (Default) ')
-	checkcurrent(1)
+	if os.path.exists(DIRDATA) == False:
+		if os.path.exists(FILEGOOGLECOM) == True:
+			print('[00;01;38;5;190m  Currently set theme[m')
+	else:
+		checkcurrent(1)
 	print(PREVIEWBEG)
 	print('\n')
 	getdefaultbrowser()
