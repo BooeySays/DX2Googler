@@ -1,0 +1,5 @@
+if [ $BASH ]; then
+    bind '"\C-j":"Google.com\n"'
+elif [ $ZSH ]; then
+    bindkey -s '\C-j' 'Google.com\n'
+fi
