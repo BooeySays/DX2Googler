@@ -288,12 +288,13 @@ BARSTRING = "  Enter your search query + Press [ENTER]"
 LID = COLUMNS - 2
 BAR = COLUMNS - 18
 
-PREVIEWBEG = ('\n\033[36m' + '─' * COLUMNS + '\r\033[' + str(int((COLUMNS - len(str(" PREVIEW - BEG "))) / 2)) + "C" + "\033[00;01m PREVIEW - BEG " + '\n')
-PREVIEWEND = ('\n\033[36m' + '─' * COLUMNS + '\r\033[' + str(int((COLUMNS - len(str(" PREVIEW - BEG "))) / 2)) + "C" + "\033[00;01m PREVIEW - END " + '\n')
+PREVIEWBEG = ('\n\033[36m' + '─' * COLUMNS + '\r\033[' + str(int((COLUMNS - len(str(" PREVIEW - BEG "))) / 2)) + "C" + "\033[00;01m PREVIEW - BEG ")
+PREVIEWEND = ('\n\033[36m' + '─' * COLUMNS + '\r\033[' + str(int((COLUMNS - len(str(" PREVIEW - BEG "))) / 2)) + "C" + "\033[00;01m PREVIEW - END \033[m")
+LINE = ('\033[00;36m' + '─' * COLUMNS)
 
 def ONE():
 	print('\033c')
-	print('  [1/4] (Default) ')
+	print('  [1/4] Small Google Search Input Box (Default) ')
 	if os.path.exists(DIRDATA) == False:
 		if os.path.exists(FILEGOOGLECOM) == True:
 			print('[00;01;38;5;190m  Currently set theme[m')
@@ -306,6 +307,10 @@ def ONE():
 	print('\033[2A\r' + '│' + '\033[01;38;5;32m Ｇ\033[38;5;160mｏ\033[38;5;215mｏ\033[38;5;32mｇ\033[38;5;34mｌ\033[38;5;160mｅ\033[38;5;15m：\033[m' + '\033[00;03;07;38;5;15m' + '\033[48;5;252m' + BARSTRING + '\033[00;07;38;5;15m' + ' ' * (BAR - len(BARSTRING)) + '\033[m ' + '│' + '\r' + '│' + '\033[01;38;5;32m Ｇ\033[38;5;160mｏ\033[38;5;215mｏ\033[38;5;32mｇ\033[38;5;34mｌ\033[38;5;160mｅ\033[38;5;15m：\033[00;38;5;15m' + '\033[07m ')
 	print('\033[m\n')
 	print(PREVIEWEND)
+	print("""
+	DESC:	Default theme used for DX2Googler
+""")
+	print(LINE)
 	USE_YN = input("[00;01m Set this logo? [00;01;32m[[00;01my[00;01;32m][00;01mes | [00;01;38;5;226m[[00;01mN[00;01;38;5;226m][00;01mo | [00;01;38;5;196m[[00;01mq[00;01;38;5;196m][00;01muit: ")
 #	USE_YN = input("Set this logo? [y/N]: ")
 	if USE_YN == 'y':
@@ -335,7 +340,7 @@ def ONE():
 #####
 def TWO():
 	print('\033c')
-	print('  [2/4]')
+	print('  [2/4] Small White Ascii-less Google Search Box')
 	checkcurrent(2)
 	print(PREVIEWBEG)
 	print("\n")
@@ -343,6 +348,14 @@ def TWO():
 #	searchq = input("\033[38;5;00m\033[48;5;252m")
 	print("\033[m\n\n")
 	print(PREVIEWEND)
+	print("""
+	DESC:	A theme similar to the default theme used for DX2Googler
+		except this theme doesn't use any of the ascii characters to
+		draw the box, and instead, paints a white box by setting the
+		string's background color. In this case, the background / box
+		color is white
+""")
+	print(LINE)
 	USE_YN = input("[00;01m Set this logo? [00;01;32m[[00;01my[00;01;32m][00;01mes | [00;01;38;5;226m[[00;01mN[00;01;38;5;226m][00;01mo | [00;01;38;5;196m[[00;01mq[00;01;38;5;196m][00;01muit: ")
 #	USE_YN = input(" Set this logo? [y]es/[N]o/[Q]uit: ")
 #	USE_YN = input("Set this logo? [y/N]: ")
@@ -373,13 +386,21 @@ def TWO():
 def THREE():
 #	print('[4/4]')
 	print('\033c')
-	print('  [3/4]')
+	print('  [3/4] Small Grey Ascii-less Google Search Box')
 	checkcurrent(3)
 	print(PREVIEWBEG)
 	print("\n")
 	print(" " + BGb * (COLUMNS - 2) + "\n " + BGb + BGBb * (COLUMNS - 4) + BGb + "\033[10D" + SEARCHBUTTONb + "\n " + BGb * (COLUMNS - 2) + "\n\r\033[2A\033[2C" + "\033[48;5;252m " + GOOGLELOGOb + "\033[0m", end="")
 	print("\033[m\n\n")
 	print(PREVIEWEND)
+	print("""
+	DESC:	A theme similar to the default theme used for DX2Googler
+		except this theme doesn't use any of the ascii characters to
+		draw the box, and instead, paints a white box by setting the
+		string's background color. In this case, the background / box
+		color is grey.
+""")
+	print(LINE)
 	USE_YN = input("[00;01m Set this logo? [00;01;32m[[00;01my[00;01;32m][00;01mes | [00;01;38;5;226m[[00;01mN[00;01;38;5;226m][00;01mo | [00;01;38;5;196m[[00;01mq[00;01;38;5;196m][00;01muit: ")
 #	USE_YN = input(" Set this logo? [y]es/[N]o/[Q]uit: ")
 #	USE_YN = input("Set this logo? [y/N]: ")
@@ -417,7 +438,7 @@ CENTEREDSPACES = int((COLUMNS - 60) / 2)
 def FOUR():
 #	print("\033c ")
 	print('\033c')
-	print('  [4/4]')
+	print('  [4/4] Google.com Webpage')
 	checkcurrent(4)
 	print(PREVIEWBEG)
 	print(" ")
@@ -438,6 +459,10 @@ def FOUR():
 #	#searchq = input("\033[3A\033[" + str(int(((COLS * .4) / 2)) + 1) + "C\033[48;5;15m\033[38;5;00m")
 	print("\033[3B")
 	print(PREVIEWEND)
+	print("""
+	DESC:	A theme I created to resemble Google's main webpage.
+""")
+	print(LINE)
 	USE_YN = input("[00;01m Set this logo? [00;01;32m[[00;01my[00;01;32m][00;01mes | [00;01;38;5;226m[[00;01mN[00;01;38;5;226m][00;01mo | [00;01;38;5;196m[[00;01mq[00;01;38;5;196m][00;01muit: ")
 #	USE_YN = input(" Set this logo? [y]es/[N]o/[Q]uit: ")
 	if USE_YN == 'y':
