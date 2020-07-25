@@ -3,7 +3,7 @@ HOMEDIR = ~
 DX2DIR = $(DESTDIR)$(HOMEDIR)/.DX2
 BINDIR = $(DESTDIR)$(PREFIX)/bin
 MANDIR = $(DESTDIR)$(PREFIX)/share/man/man1
-DOCDIR = $(DESTDIR)$(PREFIX)/share/doc/googler
+DOCDIR = $(DESTDIR)$(PREFIX)/share/doc/dx2googler
 DX2BIN = $(DESTDIR)$(DX2DIR)/bin
 DX2RC = $(DESTDIR)$(DX2DIR)/rc
 
